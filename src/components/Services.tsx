@@ -13,7 +13,7 @@ export default function Services() {
         <div className="fiverr-profile-card">
           <div className="profile-header">
             <div className="profile-avatar">
-              <img src="/images/profil.png" alt="Sivasurya M" style={{width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover'}} />
+              <img src={`${import.meta.env.BASE_URL}images/profil.png`} alt="Sivasurya M" style={{width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover'}} />
             </div>
             <div className="profile-info">
               <div className="profile-name-row">
@@ -44,7 +44,7 @@ export default function Services() {
           <div className="gig-column">
             <a href={fiverrProfileUrl} target="_blank" rel="noopener noreferrer" className="gig-card" data-cursor="Open">
               <div className="gig-image-wrapper">
-                <img src="/images/gig_3d.png" alt="3D Modeling Gig" className="gig-image" />
+                <img src={`${import.meta.env.BASE_URL}images/gig_3d.png`} alt="3D Modeling Gig" className="gig-image" />
                 <div className="gig-overlay">
                   <ExternalLink size={32} color="#fff" />
                 </div>
@@ -66,13 +66,13 @@ export default function Services() {
               <h4 className="portfolio-title">Recent Work</h4>
               <div className="portfolio-grid" style={{gridTemplateColumns: 'repeat(3, 1fr)'}}>
                 <div className="portfolio-item">
-                  <img src="/images/3D_Work_1.1.png" alt="3D Work 1" />
+                  <img src={`${import.meta.env.BASE_URL}images/3D_Work_1.1.png`} alt="3D Work 1" />
                 </div>
                 <div className="portfolio-item">
-                  <img src="/images/3D_Work_1.2.png" alt="3D Work 2" />
+                  <img src={`${import.meta.env.BASE_URL}images/3D_Work_1.2.png`} alt="3D Work 2" />
                 </div>
                 <div className="portfolio-item">
-                  <img src="/images/3D_Work_2.png" alt="3D Work 3" />
+                  <img src={`${import.meta.env.BASE_URL}images/3D_Work_2.png`} alt="3D Work 3" />
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function Services() {
           <div className="gig-column">
             <a href={fiverrProfileUrl} target="_blank" rel="noopener noreferrer" className="gig-card" data-cursor="Open">
               <div className="gig-image-wrapper">
-                <img src="/images/gig_UI.png" alt="UI Design Gig" className="gig-image" />
+                <img src={`${import.meta.env.BASE_URL}images/gig_UI.png`} alt="UI Design Gig" className="gig-image" />
                 <div className="gig-overlay">
                   <ExternalLink size={32} color="#fff" />
                 </div>
@@ -104,7 +104,7 @@ export default function Services() {
               <h4 className="portfolio-title">Recent Work</h4>
               <div className="portfolio-grid" style={{gridTemplateColumns: '1fr'}}>
                 <div className="portfolio-item" style={{height: '200px'}}>
-                  <img src="/images/UI_work.png" alt="UI Work" />
+                  <img src={`${import.meta.env.BASE_URL}images/UI_work.png`} alt="UI Work" />
                 </div>
               </div>
             </div>

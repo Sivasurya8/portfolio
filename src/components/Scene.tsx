@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
 function Model() {
-  const { scene } = useGLTF('/face.glb');
+  const { scene } = useGLTF(`${import.meta.env.BASE_URL}face.glb`);
   const modelRef = useRef<THREE.Group>(null);
 
   // Traverse the scene and modify materials if needed
@@ -57,4 +57,4 @@ export default function Scene() {
   );
 }
 
-useGLTF.preload('/face.glb');
+useGLTF.preload(`${import.meta.env.BASE_URL}face.glb`);
