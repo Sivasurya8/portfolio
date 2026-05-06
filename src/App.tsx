@@ -10,6 +10,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Services from './components/Services';
 import CatchMe from './components/CatchMe';
+import Loader from './components/Loader';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <>
+      <Loader />
       <CustomCursor />
       <Navigation />
       
