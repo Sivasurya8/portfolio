@@ -1,0 +1,213 @@
+.home-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: auto !important;
+  /* Overrides .section z-index */
+}
+
+/* --- LAYER SYSTEM FOR TEXT SANDWICH --- */
+.home-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* Let pointer pass through to canvas by default */
+  display: flex;
+  flex-direction: column;
+}
+
+.home-layer-back {
+  z-index: 1;
+}
+
+.home-model-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: auto;
+  /* Allow mouse interaction with canvas */
+}
+
+.home-layer-front {
+  z-index: 3;
+}
+
+/* Front Layer Interaction Restore */
+.home-layer-front .hero-header,
+.home-layer-front .hero-title,
+.home-layer-front .objective,
+.home-layer-front .scroll-indicator {
+  pointer-events: auto;
+}
+
+/* --- NAME STYLES --- */
+.massive-name {
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.solid-name {
+  color: var(--text-primary);
+  /* The magic trick: this will make the text invert colors based on what's behind it! */
+  /* If the model is bright white, the text becomes black, ensuring perfect visibility */
+  mix-blend-mode: difference;
+}
+
+.outline-name {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+}
+
+/* -------------------------------------- */
+
+.hero-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.availability::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #1dbf73;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #1dbf73;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.home-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.centered-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.role-wrapper {
+  display: inline-block;
+  width: 250px;
+  /* Fixed width to prevent jumping */
+  text-align: left;
+}
+
+.objective {
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  font-weight: 300;
+  max-width: 700px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.line-indicator {
+  width: 50px;
+  height: 2px;
+  background: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.line-indicator::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-color);
+  animation: lineScroll 2s infinite ease-in-out;
+}
+
+@keyframes lineScroll {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}

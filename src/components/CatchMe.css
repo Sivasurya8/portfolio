@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime&family=Open+Sans:wght@400;700&display=swap');
+
+.catchme-section {
+  padding: 6rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #000000; /* Match main theme */
+  font-family: 'Open Sans', sans-serif;
+  color: #d1d1d1;
+}
+
+.contact-retro-container {
+  width: 100%;
+  max-width: 1000px;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.retro-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #555;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.title-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.badge {
+  background-color: #2a2a2a;
+  color: #555;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.retro-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 8rem;
+  color: #f5eedc; /* Cream color */
+  line-height: 0.8;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.retro-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-left: 2rem;
+  border-left: 2px solid #555;
+}
+
+.retro-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.retro-icon {
+  color: #f5eedc;
+}
+
+.retro-info-text {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #bbb;
+}
+
+.retro-info-text strong {
+  color: #f5eedc;
+  font-weight: 700;
+}
+
+.accent-email {
+  color: var(--accent-color);
+}
+
+.retro-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+}
+
+.retro-form-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.retro-form-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.retro-form input,
+.retro-form textarea {
+  width: 100%;
+  background-color: #f5eedc;
+  border: none;
+  padding: 1rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.9rem;
+  color: #333;
+  outline: none;
+}
+
+.retro-form input::placeholder,
+.retro-form textarea::placeholder {
+  color: #888;
+}
+
+.retro-form textarea {
+  flex: 1;
+  min-height: 200px;
+  resize: vertical;
+}
+
+.submit-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.retro-form button {
+  background-color: var(--accent-color);
+  color: #f5eedc;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: opacity 0.2s;
+}
+
+.retro-form button:hover {
+  opacity: 0.8;
+}
+
+.retro-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  border-top: 1px dashed #555;
+  padding-top: 2rem;
+}
+
+.rss-feed {
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rss-icon {
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent-color);
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.rss-highlight {
+  color: var(--accent-color);
+}
+
+.retro-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.retro-social-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #f5eedc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #363636;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.retro-social-icon:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 900px) {
+  .retro-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  
+  .retro-title {
+    font-size: 5rem;
+  }
+
+  .retro-info {
+    padding-left: 0;
+    border-left: none;
+    border-top: 2px solid #555;
+    padding-top: 1.5rem;
+    width: 100%;
+  }
+
+  .retro-form {
+    grid-template-columns: 1fr;
+  }
+
+  .retro-footer {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+}
