@@ -9,22 +9,24 @@ import Home from './components/Home';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Services from './components/Services';
+import RenderGallery from './components/RenderGallery';
 import CatchMe from './components/CatchMe';
 import Loader from './components/Loader';
+import Marquee from './components/Marquee';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
-    // Initialize Lenis
+    // Initialize Lenis with snappier settings
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.0,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
+      wheelMultiplier: 0.8,
+      touchMultiplier: 1.5,
     });
 
     // Update ScrollTrigger on Lenis scroll
@@ -53,6 +55,8 @@ function App() {
         <Skills />
         <Projects />
         <Services />
+        <RenderGallery />
+        <Marquee />
         <CatchMe />
       </main>
     </>

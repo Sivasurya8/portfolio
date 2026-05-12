@@ -194,7 +194,7 @@ export default function Projects() {
               <p className="project-modal-desc">{activeProject.description}</p>
 
               <div className="project-modal-grid">
-                <div className="project-details-col" style={{gridColumn: "1 / -1"}}>
+                <div className="project-details-col">
                   <h4>What I Did</h4>
                   <ul className="project-features">
                     {activeProject.features.map((feature, i) => (
@@ -206,6 +206,18 @@ export default function Projects() {
                   <div className="tech-stack-container">
                     {activeProject.techStack.map((tech, i) => (
                       <span key={i} className="tech-badge">{tech}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="project-images-col">
+                  <h4>Project Gallery</h4>
+                  <div className="image-placeholders-grid">
+                    {Array.from({ length: activeProject.imagePlaceholders }).map((_, i) => (
+                      <div key={i} className="gallery-placeholder">
+                        <div style={{opacity: 0.5, marginBottom: '0.5rem'}}>📷</div>
+                        <span>Upload Image {i + 1} Here</span>
+                      </div>
                     ))}
                   </div>
                 </div>
