@@ -99,8 +99,9 @@ export default function Projects() {
             start: 'top top',
             end: `+=${scrollWidth}`,
             pin: true,
-            scrub: 1,
+            scrub: 0.5, // Faster scrub for better performance
             invalidateOnRefresh: true,
+            anticipatePin: 1, // Prepares the browser for pinning to avoid jumps
           }
         });
       }, container);
@@ -113,12 +114,27 @@ export default function Projects() {
   useEffect(() => {
     if (activeProject) {
       document.body.style.overflow = 'hidden';
+
+      // On mobile, if the page somehow scrolls, close the modal automatically
+      let initialScroll = window.scrollY;
+      const handleScroll = () => {
+        if (Math.abs(window.scrollY - initialScroll) > 50) {
+          setActiveProject(null);
+        }
+      };
+
+      const timer = setTimeout(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+      }, 300);
+
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener('scroll', handleScroll);
+        document.body.style.overflow = 'unset';
+      };
     } else {
       document.body.style.overflow = 'unset';
     }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [activeProject]);
 
   return (
@@ -178,7 +194,7 @@ export default function Projects() {
               <p className="project-modal-desc">{activeProject.description}</p>
 
               <div className="project-modal-grid">
-                <div className="project-details-col">
+                <div className="project-details-col" style={{gridColumn: "1 / -1"}}>
                   <h4>What I Did</h4>
                   <ul className="project-features">
                     {activeProject.features.map((feature, i) => (
@@ -190,18 +206,6 @@ export default function Projects() {
                   <div className="tech-stack-container">
                     {activeProject.techStack.map((tech, i) => (
                       <span key={i} className="tech-badge">{tech}</span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="project-images-col">
-                  <h4>Project Gallery</h4>
-                  <div className="image-placeholders-grid">
-                    {Array.from({ length: activeProject.imagePlaceholders }).map((_, i) => (
-                      <div key={i} className="gallery-placeholder">
-                        <ImageIcon size={32} opacity={0.5} />
-                        <span>Upload Image {i + 1} Here</span>
-                      </div>
                     ))}
                   </div>
                 </div>

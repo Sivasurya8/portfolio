@@ -138,12 +138,27 @@ export default function Skills() {
   useEffect(() => {
     if (activeSkill) {
       document.body.style.overflow = 'hidden';
+
+      // On mobile, if the page somehow scrolls, close the modal automatically
+      let initialScroll = window.scrollY;
+      const handleScroll = () => {
+        if (Math.abs(window.scrollY - initialScroll) > 50) {
+          setActiveSkill(null);
+        }
+      };
+
+      const timer = setTimeout(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+      }, 300);
+
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener('scroll', handleScroll);
+        document.body.style.overflow = 'unset';
+      };
     } else {
       document.body.style.overflow = 'unset';
     }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [activeSkill]);
 
   return (
