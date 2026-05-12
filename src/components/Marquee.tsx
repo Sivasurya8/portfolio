@@ -36,14 +36,14 @@ export default function Marquee() {
         <div className="marquee-row marquee-right">
           <div className="marquee-content marquee-content-reverse">
             {row2.map((item, index) => (
-              <span key={index} className="marquee-item outline">
+              <span key={index} className="marquee-item">
                 {item} <span className="marquee-separator">•</span>
               </span>
             ))}
           </div>
           <div className="marquee-content marquee-content-reverse" aria-hidden="true">
             {row2.map((item, index) => (
-              <span key={`dup-${index}`} className="marquee-item outline">
+              <span key={`dup-${index}`} className="marquee-item">
                 {item} <span className="marquee-separator">•</span>
               </span>
             ))}
