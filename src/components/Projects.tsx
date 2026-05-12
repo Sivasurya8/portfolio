@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { X, Image as ImageIcon } from 'lucide-react';
+import { X } from 'lucide-react';
 import './Projects.css';
 
 gsap.registerPlugin(ScrollTrigger);
