@@ -108,12 +108,17 @@
 .retro-form input,
 .retro-form textarea {
   width: 100%;
-  background-color: #f5eedc;
+  background-color: #ffffff;
   border: none;
   padding: 1rem;
   font-family: 'Courier Prime', monospace;
   font-size: 0.9rem;
   color: #333;
+  outline: none;
+}
+
+.retro-form input:focus,
+.retro-form textarea:focus {
   outline: none;
 }
 
