@@ -1,6 +1,6 @@
 .site-footer {
   width: 100%;
-  padding: 2rem 0 4rem 0;
+  padding: 1rem 0 2rem 0;
   background-color: #000000;
   color: #ffffff;
   font-family: 'Open Sans', sans-serif;
@@ -9,7 +9,7 @@
 .footer-card {
   background-color: #111111;
   border-radius: 20px;
-  padding: 4rem;
+  padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
