@@ -11,13 +11,11 @@ import Projects from './components/Projects';
 import Services from './components/Services';
 import RenderGallery from './components/RenderGallery';
 import CatchMe from './components/CatchMe';
-import Marquee from './components/Marquee';
-import Footer from './components/Footer';
 import Loader from './components/Loader';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function App() {
+export default function App() {
   useEffect(() => {
     // Initialize Lenis with snappier settings
     const lenis = new Lenis({
@@ -58,11 +56,7 @@ function App() {
         <Services />
         <RenderGallery />
         <CatchMe />
-        <Marquee />
-        <Footer />
       </main>
     </>
   );
 }
-
-export default App;
