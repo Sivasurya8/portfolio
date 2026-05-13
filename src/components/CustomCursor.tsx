@@ -10,14 +10,14 @@ export default function CustomCursor() {
 
   useEffect(() => {
     const cursor = cursorRef.current;
+    if (!cursor) return;
+
+    const xSetter = gsap.quickSetter(cursor, "x", "px");
+    const ySetter = gsap.quickSetter(cursor, "y", "px");
     
     const moveCursor = (e: MouseEvent) => {
-      gsap.to(cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.15,
-        ease: 'power2.out'
-      });
+      xSetter(e.clientX);
+      ySetter(e.clientY);
     };
 
     const handleMouseOver = (e: MouseEvent) => {

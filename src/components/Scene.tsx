@@ -29,6 +29,7 @@ function Model() {
 
 function CursorLight() {
   const lightRef = useRef<THREE.PointLight>(null);
+  const targetPos = useRef(new THREE.Vector3());
 
   useFrame((state) => {
     if (lightRef.current) {
@@ -37,7 +38,8 @@ function CursorLight() {
       const y = (state.pointer.y * state.viewport.height) / 2;
       
       // Light tracks mouse smoothly
-      lightRef.current.position.lerp(new THREE.Vector3(x, y, 2), 0.3);
+      targetPos.current.set(x, y, 2);
+      lightRef.current.position.lerp(targetPos.current, 0.2);
     }
   });
 

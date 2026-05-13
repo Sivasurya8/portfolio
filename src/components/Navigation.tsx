@@ -1,4 +1,4 @@
-import { Home, Cpu, Briefcase, Layers, Mail } from 'lucide-react';
+import { Home, Cpu, Briefcase, Layers, Mail, Image } from 'lucide-react';
 import './Navigation.css';
 
 export default function Navigation() {
@@ -7,6 +7,7 @@ export default function Navigation() {
     { id: 'skills', icon: <Cpu size={22} />, label: 'Skills' },
     { id: 'projects', icon: <Briefcase size={22} />, label: 'Projects' },
     { id: 'services', icon: <Layers size={22} />, label: 'Services' },
+    { id: 'renders', icon: <Image size={22} />, label: 'Renders' },
     { id: 'catchme', icon: <Mail size={22} />, label: 'Contact' },
   ];
 

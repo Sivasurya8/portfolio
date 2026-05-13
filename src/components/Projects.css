@@ -32,6 +32,7 @@
   padding-right: 20vw; /* Padding at end */
   align-items: flex-end; /* Push cards to the bottom so they don't overlap top header */
   padding-bottom: 12vh;
+  will-change: transform;
 }
 
 .project-panel {
@@ -42,6 +43,7 @@
   flex-shrink: 0;
   cursor: pointer;
   transition: transform 0.4s ease;
+  will-change: transform;
 }
 
 .project-panel:hover {
